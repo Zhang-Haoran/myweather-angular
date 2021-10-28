@@ -6,6 +6,7 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { CurrentComponent } from './components/weather/current/current.component';
 import { ForecastComponent } from './components/weather/forecast/forecast.component';
 import { SearchbarComponent } from './components/weather/searchbar/searchbar.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchbarComponent } from './components/weather/searchbar/searchbar.com
     SearchbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
