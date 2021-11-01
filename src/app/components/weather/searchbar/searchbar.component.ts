@@ -15,7 +15,6 @@ export class SearchbarComponent implements OnInit {
 
   handleOnChange(searchValue: string):void{
     this.searchValue?.emit(searchValue);
-    console.log(this.searchValue)
   }
 
 

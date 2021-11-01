@@ -23,7 +23,7 @@ export class WeatherComponent implements OnInit {
     })
   }
 
-  handleSearchValue(searchValue: string){
+  handleSearchValueChange(searchValue: string){
     this.searchValue = searchValue
     console.log(this.searchValue)
   }
