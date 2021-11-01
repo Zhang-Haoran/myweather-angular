@@ -1,5 +1,4 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
-import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-searchbar',
@@ -9,6 +8,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 export class SearchbarComponent implements OnInit {
 
   @Output() searchValue = new EventEmitter<string>();
+  @Output() submit = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
@@ -17,7 +17,4 @@ export class SearchbarComponent implements OnInit {
   handleOnChange(searchValue: string):void{
     this.searchValue?.emit(searchValue);
   }
-
-
-
 }
