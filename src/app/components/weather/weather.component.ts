@@ -9,6 +9,7 @@ import {OpenWeatherAPIService} from "../../services/open-weather-api.service";
 export class WeatherComponent implements OnInit {
 
   currentWeather: {} = []
+  searchValue?: string = ""
   constructor(private openWeatherAPIService: OpenWeatherAPIService) { }
 
   ngOnInit(): void {
@@ -22,4 +23,8 @@ export class WeatherComponent implements OnInit {
     })
   }
 
+  handleSearchValue(searchValue: string){
+    this.searchValue = searchValue
+    console.log(this.searchValue)
+  }
 }
