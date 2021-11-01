@@ -13,7 +13,6 @@ export class WeatherComponent implements OnInit {
   constructor(private openWeatherAPIService: OpenWeatherAPIService) { }
 
   ngOnInit(): void {
-    this.getCurrentWeatherFromAPI('Melbourne,au')
   }
 
   getCurrentWeatherFromAPI(searchValue: string): {} {
