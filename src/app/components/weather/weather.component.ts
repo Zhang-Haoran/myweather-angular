@@ -8,14 +8,14 @@ import {OpenWeatherAPIService} from "../../services/open-weather-api.service";
 })
 export class WeatherComponent implements OnInit {
 
-  currentWeather: any = []
+  currentWeather: {} = []
   constructor(private openWeatherAPIService: OpenWeatherAPIService) { }
 
   ngOnInit(): void {
     this.getCurrentWeatherFromAPI('Melbourne,au')
   }
 
-  getCurrentWeatherFromAPI(searchValue: string): any {
+  getCurrentWeatherFromAPI(searchValue: string): {} {
     return this.openWeatherAPIService.getCurrentWeatherFromAPI(searchValue).toPromise().then(currentWeather => {
       this.currentWeather = currentWeather
       console.log(this.currentWeather)

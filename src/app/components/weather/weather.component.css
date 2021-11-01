@@ -1,0 +1,7 @@
+.container {
+  background: url("../../../assets/images/clear.jpg") center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
