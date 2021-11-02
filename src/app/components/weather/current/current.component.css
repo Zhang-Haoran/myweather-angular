@@ -29,9 +29,18 @@
     margin-right: 0.5rem;
 }
 
-.text{
+.text__other{
+    margin:1rem;
+    font-size:1.75rem;
+}
+
+.text__weather{
     margin:1rem;
     font-size:2rem;
+}
+.text__temperature{
+    margin:1rem;
+    font-size:5rem;
 }
 
 .container {

@@ -2,16 +2,17 @@
   <h2 class="title">{{currentWeather.name}}, {{currentWeather.sys.country}}</h2>
   <div class="body">
     <div class="card__weather">
+      <img src="http://openweathermap.org/img/wn/{{currentWeather.weather[0].icon}}@2x.png">
       <div class="flex">
-        <p class="text">{{ currentWeather.main.temp.toFixed(1) }}&#176;</p>
-        <p class="text">{{ currentWeather.weather[0].description }}</p>
+        <p class="text__temperature">{{ currentWeather.main.temp.toFixed(1) }}&#176;</p>
+        <p class="text__weather">{{ currentWeather.weather[0].description }}</p>
       </div>
     </div>
     <div class="card__wind">
-      <p class="text">Highest: {{ currentWeather.main.temp_max.toFixed(1) }}&#176;</p>
-      <p class="text">Lowest: {{ currentWeather.main.temp_min.toFixed(1) }}&#176;</p>
-      <p class="text">Humidity: {{ currentWeather.main.humidity }}%</p>
-      <p class="text">Wind: {{ currentWeather.wind.speed }}mph</p>
+      <p class="text__other"><img src="../../../../assets/images/highest.png" class="image">Highest: {{ currentWeather.main.temp_max.toFixed(1) }}&#176;</p>
+      <p class="text__other"><img src="../../../../assets/images/lowest.png" class="image">Lowest: {{ currentWeather.main.temp_min.toFixed(1) }}&#176;</p>
+      <p class="text__other"><img src="../../../../assets/images/humidity.png" class="image">Humidity: {{ currentWeather.main.humidity }}%</p>
+      <p class="text__other"><img src="../../../../assets/images/wind.png" class="image">Wind: {{ currentWeather.wind.speed }}mph</p>
     </div>
   </div>
 </section>
