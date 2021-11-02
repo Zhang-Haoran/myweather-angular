@@ -1,5 +1,5 @@
 <section class="container">
-  <h2 class="title"></h2>
+  <h2 class="title">{{currentWeather.name}}, {{currentWeather.sys.country}}</h2>
   <div class="body">
     <div class="card__weather">
       <div class="flex">
@@ -8,8 +8,8 @@
       </div>
     </div>
     <div class="card__wind">
-      <p class="text">Highest: {{ currentWeather.main.temp_max.toFixed(1) }}</p>
-      <p class="text">Lowest: {{ currentWeather.main.temp_min.toFixed(1) }}</p>
+      <p class="text">Highest: {{ currentWeather.main.temp_max.toFixed(1) }}&#176;</p>
+      <p class="text">Lowest: {{ currentWeather.main.temp_min.toFixed(1) }}&#176;</p>
       <p class="text">Humidity: {{ currentWeather.main.humidity }}%</p>
       <p class="text">Wind: {{ currentWeather.wind.speed }}mph</p>
     </div>
