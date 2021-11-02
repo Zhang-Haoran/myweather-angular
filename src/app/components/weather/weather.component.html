@@ -1,4 +1,5 @@
 <div class="container">
   <app-searchbar (searchValue)="handleSearchValueChange($event)" (submit)="handleSubmit($event)"></app-searchbar>
   <app-current [currentWeather] = "currentWeather" *ngIf="currentWeather"></app-current>
+  <app-forecast [forecastWeather] = "forecastWeather" *ngIf="forecastWeather"></app-forecast>
 </div>

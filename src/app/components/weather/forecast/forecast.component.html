@@ -1,1 +1,21 @@
-<p>forecast works!</p>
+<section class="container">
+    <h2 class="title">
+        Forecast
+    </h2>
+    <div class="body">
+        <div class="card" *ngFor = "let each of forecastWeather">
+            <p class="text">
+                {{each.dt_txt.split(" ")[0].substr(5,5)}}
+            </p>
+            <p class="text">
+                {{each.dt_txt.split(" ")[1].substr(0,5)}}
+            </p>
+            <p class="text">
+                {{each.weather[0].main}}
+            </p>
+            <p class="text">
+                {{each.main.temp}}&#176;
+            </p>
+        </div>
+    </div>
+</section>

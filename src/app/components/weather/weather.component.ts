@@ -29,7 +29,7 @@ export class WeatherComponent implements OnInit {
       .getForecastWeatherFromAPI(searchValue)
       .toPromise()
       .then((forecastWeather) => {
-        this.forecastWeather = forecastWeather;
+        this.forecastWeather = forecastWeather.list;
         console.log(this.forecastWeather);
       });
   }
