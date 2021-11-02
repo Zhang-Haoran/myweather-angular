@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-current',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentComponent implements OnInit {
 
+  @Input() currentWeather: any = undefined;
   constructor() { }
 
   ngOnInit(): void {

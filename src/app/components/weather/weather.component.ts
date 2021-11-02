@@ -8,7 +8,7 @@ import {OpenWeatherAPIService} from "../../services/open-weather-api.service";
 })
 export class WeatherComponent implements OnInit {
 
-  currentWeather: {} = []
+  currentWeather: any = undefined;
   searchValue: string = ""
   constructor(private openWeatherAPIService: OpenWeatherAPIService) { }
 
