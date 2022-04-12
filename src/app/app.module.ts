@@ -6,8 +6,8 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { CurrentComponent } from './components/weather/current/current.component';
 import { ForecastComponent } from './components/weather/forecast/forecast.component';
 import { SearchbarComponent } from './components/weather/searchbar/searchbar.component';
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
@@ -23,16 +23,16 @@ registerLocaleData(en);
     WeatherComponent,
     CurrentComponent,
     ForecastComponent,
-    SearchbarComponent
+    SearchbarComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    NzIconModule
+    NzIconModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

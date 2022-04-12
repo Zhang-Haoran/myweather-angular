@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { OpenWeatherAPIService } from '../../services/open-weather-api.service';
 
 @Component({
@@ -10,9 +11,25 @@ export class WeatherComponent implements OnInit {
   currentWeather: any = undefined;
   forecastWeather: any = undefined;
   searchValue: string = '';
-  constructor(private openWeatherAPIService: OpenWeatherAPIService) {}
+  constructor(
+    private openWeatherAPIService: OpenWeatherAPIService,
+    private localStorageService: LocalStorageService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.localStorageService.list().subscribe((result) => {
+      console.log('local storage changed');
+      console.log(result);
+    });
+    this.localStorageService.add('key1', '1');
+    this.localStorageService.add('key2', '2');
+    this.localStorageService.add('key3', '3');
+    this.localStorageService.add('key4', '4');
+    this.localStorageService.add('key5', '5');
+    this.localStorageService.update('key2', '200');
+    this.localStorageService.get('key1');
+    this.localStorageService.remove('key1');
+  }
 
   getCurrentWeatherFromAPI(searchValue: string): {} {
     return this.openWeatherAPIService
