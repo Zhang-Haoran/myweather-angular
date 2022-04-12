@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalStorageService {
-  private subject = new Subject<any>();
+  private subject = new BehaviorSubject<any>(0);
   // Subject is a special type of Observable that allows values to be multicast to many Observers
   // A BehaviorSubject holds one value.
   // BehaviourSubject will return the initial value or the current value on Subscription
@@ -18,7 +18,7 @@ export class LocalStorageService {
   add(key: any, value: any) {
     if (localStorage.getItem(key) === null) {
       localStorage.setItem(key, value);
-      this.subject.next('changed');
+      this.subject.next('added');
       return true;
     } else {
       return false;
@@ -30,7 +30,7 @@ export class LocalStorageService {
       return false;
     } else {
       localStorage.removeItem(key);
-      this.subject.next('changed');
+      this.subject.next('removed');
       return true;
     }
   }
@@ -49,7 +49,7 @@ export class LocalStorageService {
     } else {
       localStorage.setItem(key, value);
       //To feed a new value to the Subject, just call next(theValue), and it will be multicasted to the Observers registered to listen to the Subject.
-      this.subject.next('changed');
+      this.subject.next('updated');
       return value;
     }
   }
